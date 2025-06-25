@@ -103,7 +103,6 @@ header {
   transform: translateY(0);
 }
 
-/* Ripple effect */
 .ripple {
   position: absolute;
   border-radius: 50%;
@@ -129,38 +128,98 @@ header {
   }
 }
 
-
 section {
+  display: grid;
+  place-items: center;
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 
-.project-container {
+#project {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#project > h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 30vh;
+}
+
+#slide {
+  display: flex;
   gap: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  width: 80vw; 
+  box-sizing: border-box;
+  padding-bottom: 1rem;
 }
 
-.project-container h1 {
-  font-size: 2rem;
-  color: #ffffff;
+#slide::-webkit-scrollbar {
+  height: 8px;
+}
+
+#slide::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.slide-item {
+  flex: 0 0 300px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.slide-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.slide-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
   margin-bottom: 1rem;
+  opacity: 0.85;
 }
 
+.slide-item a {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
 
+.slide-item a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
 
-
-
-
-
-                          
-                 
-                
-                     
-              
- 
+@media (max-width: 600px) {
+  .slide-item {
+    flex: 0 0 80%;
+  }
+}
