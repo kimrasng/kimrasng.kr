@@ -145,6 +145,13 @@ section {
   box-sizing: border-box;
 }
 
+#about > h1 {
+  font-size: 2rem;
+  line-height: 1.6;
+  max-width: 60vw;
+  margin: 0 auto;
+}
+
 #project > h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -196,7 +203,7 @@ section {
 }
 
 .slide-item p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 1rem;
   opacity: 0.85;

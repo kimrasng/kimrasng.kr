@@ -1,25 +1,25 @@
 [
     {
         "title": "QWERTY-WEB",
-        "description": "선린인터넷 고등학교 웹 개발동아리 QWERTY의 웹사이트를 제작하였습니다.",
+        "description": "Developed the website for QWERTY, the web development club at Sunrin Internet High School.",
         "link": "https://sunrint-qwerty.kr",
         "github": "https://github.com/sunrin-qwerty/web"
     },
     {
         "title": "Blog",
-        "description": "개인 블로그를 제작하였습니다.",
+        "description": "Developed a personal blog.",
         "link": "https://blog.kimrasng.kr",
         "github": "https://github.com/kimrasng/blog"
     },
     {
         "title": "Music-app",
-        "description": "음악 재생 웹 애플리케이션을 제작하였습니다.",
+        "description": "Developed a web music player application.",
         "link": "https://music.kimrasng.kr",
         "github": "https://github.com/kimrasng/music-app"
     },
     {
         "title": "Portfolio",
-        "description": "개인 포트폴리오를 제작하였습니다.",
+        "description": "Developed a personal portfolio.",
         "link": "https://portfolio.kimrasng.kr",
         "github": "https://github.com/kimrasng/portfolio"
     }

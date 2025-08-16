@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useEffect, useState } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 import './App.css'
@@ -14,7 +13,6 @@ const App: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
-    // Typewriter
     const typingElement = document.getElementById('typing-Text')
     if (typingElement) {
       new Typewriter(typingElement, {
@@ -26,7 +24,6 @@ const App: React.FC = () => {
       })
     }
 
-    // Fetch projects
     fetch('/project.json')
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
@@ -43,7 +40,6 @@ const App: React.FC = () => {
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#project">Project</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </header>
 
@@ -52,7 +48,10 @@ const App: React.FC = () => {
       </section>
 
       <section id="about">
-        <h2>About Me</h2>
+        <h1>
+          We’re not just building a service — we’re designing the future.<br/>
+          Innovation, speed, and a touch of chaos. That’s our way.
+        </h1>
       </section>
 
       <section id="project">
@@ -77,15 +76,8 @@ const App: React.FC = () => {
           )}
         </div>
       </section>
-
-      <section id="contact">
-        <ul>
-          <li><a href="mailto:me@kimrasng.kr">Email</a></li>
-        </ul>
-      </section>
-
       <footer className="App-footer">
-        <p>© 2023 Kimrasng. All rights reserved.</p>
+        <p>© 2025 Kimrasng. All rights reserved.</p>
       </footer>
     </>
   )
