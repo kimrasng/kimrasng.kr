@@ -11,7 +11,8 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": false,                // 🔹 빌드 결과 파일을 내보내도록 변경
+    "composite": true,              // 🔹 프로젝트 참조용으로 반드시 필요
 
     /* Linting */
     "strict": true,
