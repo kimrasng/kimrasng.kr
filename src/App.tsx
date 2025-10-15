@@ -1,33 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import SplitText from './components/SplitText'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className="main-section">
+        <SplitText
+          text="Code the network.
+Design the system.
+Build the experience."
+          className="main-title"
+          delay={100}
+          duration={0.4}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          tag="h1"
+          rootMargin="-100px"
+          textAlign="left"
+        />
+      </section>
+
+      <section id="about-section">
+        <h2 id="section-title">About Me.</h2>
+        <div id="about-container">
+          <div id="profile-container">
+            <img src="/profile.png" id="profile-img" alt="profile" />
+            <span id="profile-name">Dohyun Kim</span>
+          </div>
+          <p id="about-description">
+            안녕하세요. 웹 풀스택 개발자 김도현입니다.<br />
+            저는 안정적인 시스템 구조와 효율적인 서비스 운영을 중요하게 생각합니다.<br />
+            서버부터 프론트엔드까지 전체적인 개발 과정을 직접 설계하고 구현합니다.<br /><br />
+            최근에는 안드로이드 앱 개발을 배우며, 웹과 모바일을 연결하는<br />
+            통합적인 서비스를 만드는 것을 목표로 하고 있습니다.<br /><br />
+            새로운 기술을 공부하고<br />
+            더 나은 구조를 고민하는 것이 저의 개발 원동력입니다.
+          </p>
+        </div>
+        <div id='experience'>
+          <div className='exp-item'>
+            <h3>2024</h3>
+            <p>Description of experience 1</p>
+          </div>
+          <div className='exp-item'>
+            <h3>2025</h3>
+            <p>Description of experience 2</p>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
