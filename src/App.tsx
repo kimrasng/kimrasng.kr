@@ -86,16 +86,6 @@ Build the experience."
             더 나은 구조를 고민하는 것이 저의 개발 원동력입니다.
           </p>
         </div>
-        <div id='experience'>
-          <div className='exp-item'>
-            <h3>2024</h3>
-            <p>선린인터넷고등학교 정보보호과 입학</p>
-          </div>
-          <div className='exp-item'>
-            <h3>2025</h3>
-            <p>QWERTY(웹 개발동아리) 운영</p>
-          </div>
-        </div>
       </section>
 
       <section id="project-section">
