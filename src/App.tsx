@@ -1,7 +1,52 @@
 import './App.css'
 import SplitText from './components/SplitText'
+import { useEffect, useState } from 'react'
 
 function App() {
+
+  type Project = {
+    img: string
+    alt: string
+    title: string
+    desc: string
+    github: string
+    demo: string
+  }
+
+  const PROJECTS_JSON_URL = '/projects.json'
+
+  function ProjectsSection() {
+    const [projects, setProjects] = useState<Project[]>([])
+
+    useEffect(() => {
+      fetch(PROJECTS_JSON_URL)
+        .then(res => res.json())
+        .then(data => setProjects(data))
+        .catch(() => setProjects([]))
+    }, [])
+
+    return (
+      <>
+        <h2 id="section-title">Project</h2>
+        <div className='project-container'>
+          {projects.map((project, idx) => (
+            <div className='project-item' key={idx}>
+              <img src={project.img} className='project-img' alt={project.alt} />
+              <div className='project-desc'>
+                <h3>{project.title}</h3>
+                <p>{project.desc}</p>
+              </div>
+              <div className='project-links'>
+                <a href={project.github}>GitHub</a>
+                <a href={project.demo}>Demo</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+    </>
+    )
+  }
 
   return (
     <>
@@ -52,6 +97,15 @@ Build the experience."
           </div>
         </div>
       </section>
+
+      <section id="project-section">
+        <ProjectsSection />
+        <footer>
+          © 2024 Dohyun Kim. All rights reserved.
+        </footer> 
+      </section>
+
+
     </>
   )
 }
