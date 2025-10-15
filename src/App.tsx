@@ -90,9 +90,6 @@ Build the experience."
 
       <section id="project-section">
         <ProjectsSection />
-        <footer>
-          © 2024 Dohyun Kim. All rights reserved.
-        </footer> 
       </section>
 
 
