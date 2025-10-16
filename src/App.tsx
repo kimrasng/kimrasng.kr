@@ -75,6 +75,11 @@ Build the experience."
           <div id="profile-container">
             <img src="/profile.png" id="profile-img" alt="profile" />
             <span id="profile-name">Dohyun Kim</span>
+            <div id='connect'>
+              <a href="mailto:me@kimrasng.kr">Email</a>
+              <a href="https://github.com/kimdohyun">GitHub</a>
+              <a href="https://www.linkedin.com/in/kim-dohyun-5b1385384/">LinkedIn</a>
+            </div>
           </div>
           <p id="about-description">
             안녕하세요. 웹 풀스택 개발자 김도현입니다.<br />
