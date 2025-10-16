@@ -97,7 +97,6 @@ Build the experience."
         <ProjectsSection />
       </section>
 
-
     </>
   )
 }
