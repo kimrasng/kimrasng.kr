@@ -13,7 +13,14 @@ function App() {
     demo: string
   }
 
+  type Achievement = {
+    year: string
+    type: 'award' | 'education' | 'activity' | 'etc'
+    title: string
+  }
+
   const PROJECTS_JSON_URL = '/projects.json'
+  const ACHIEVEMENTS_JSON_URL = '/achievements.json'
 
   function ProjectsSection() {
     const [projects, setProjects] = useState<Project[]>([])
@@ -43,8 +50,32 @@ function App() {
             </div>
           ))}
         </div>
+      </>
+    )
+  }
 
-    </>
+  function AchievementsPanel() {
+    const [achievements, setAchievements] = useState<Achievement[]>([])
+
+    useEffect(() => {
+      fetch(ACHIEVEMENTS_JSON_URL)
+        .then(res => res.json())
+        .then(data => setAchievements(data))
+        .catch(() => setAchievements([]))
+    }, [])
+
+    return (
+      <div id="achievements-panel">
+        <span id="achievements-label">Achievements</span>
+        <ul id="achievements-list">
+          {achievements.map((item, idx) => (
+            <li key={idx} className={`achievement-item achievement-${item.type}`}>
+              <span className="achievement-year">{item.year}</span>
+              <span className="achievement-title">{item.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 
@@ -52,9 +83,7 @@ function App() {
     <>
       <section className="main-section">
         <SplitText
-          text="Code the network.
-                Design the system.
-                Build the experience."
+          text={`Code the network.\nDesign the system.\nBuild the experience.`}
           className="main-title"
           delay={100}
           duration={0.4}
@@ -94,6 +123,7 @@ function App() {
             새로운 기술을 공부하고
             더 나은 구조를 고민하는 것이 저의 개발 원동력입니다.
           </p>
+          <AchievementsPanel />
         </div>
       </section>
 
