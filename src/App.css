@@ -279,6 +279,10 @@ section {
   background: #7ab8e8;
 }
 
+.achievement-activity::before {
+  background: #7ae8a8;
+}
+
 .achievement-etc::before {
   background: #888888;
 }
